@@ -1,20 +1,15 @@
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
+from fastapi.middleware.wsgi import WSGIMiddleware
+
 from routes.user import user
 from routes.testCase import testCase
+from routes.executionResult import executionResult
 from models.user import users
 from models.testCase import test_cases
 from models.executionResult import execution_results
 from config.db import db, meta, inspect
-
-
-
-
-
-# @app.on_event("startup")
-# async def startup():
-#   meta.create_all(bind=db)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -30,3 +25,4 @@ app = FastAPI(lifespan=lifespan)
 
 app.include_router(user, prefix='/user', tags=['user'])
 app.include_router(testCase, prefix='/testcase', tags=['testcase'])
+app.include_router(executionResult, prefix='/executionresult', tags=['executionresult'])

@@ -12,7 +12,6 @@ execution_results = Table(
     Column('test_case_id', Integer, ForeignKey('test_cases.id'), nullable=False),
     Column('test_asset', String, nullable=False),
     Column('result', String, nullable=False),
-    Column('execution_time', DateTime, server_default='CURRENT_TIMESTAMP'),
     Column('user_id', Integer, ForeignKey('users.id'), nullable=False),
 )
 
