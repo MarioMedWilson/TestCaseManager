@@ -18,8 +18,7 @@ async def read_users():
         arr.append({
             "id": row[0],
             "name": row[1],
-            "username": row[2],
-            "password": row[3]
+            "username": row[2]
         })
     return arr
 
