@@ -2,6 +2,7 @@ from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
 from routes.user import user
+from routes.testCase import testCase
 from models.user import users
 from models.testCase import test_cases
 from models.executionResult import execution_results
@@ -28,3 +29,4 @@ async def lifespan(app: FastAPI):
 app = FastAPI(lifespan=lifespan)
 
 app.include_router(user, prefix='/user', tags=['user'])
+app.include_router(testCase, prefix='/testcase', tags=['testcase'])

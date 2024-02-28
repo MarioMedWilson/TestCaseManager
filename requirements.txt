@@ -3,4 +3,6 @@ fastapi
 uvicorn 
 sqlalchemy 
 pymysql
-pysqlite3
+bcrypt
+python-dotenv
+PyJWT
