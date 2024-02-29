@@ -1,0 +1,6 @@
+__pycache__
+.pytest_cache
+env
+commands.txt
+db.sqlite3
+db.sqlite3-journal
